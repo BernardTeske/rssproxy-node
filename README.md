@@ -50,6 +50,31 @@ Mit eigenem Port:
 docker run -p 8080:8080 -e PORT=8080 rssproxy
 ```
 
+## Docker Compose
+
+Mit dem mitgelieferten `docker-compose.yml` starten:
+
+```bash
+docker compose up -d
+```
+
+Der Dienst ist dann unter `http://localhost:3000/?feed=...` erreichbar. Port anpassen:
+
+```bash
+PORT=8080 docker compose up -d
+```
+
+Lokal aus dem Repository bauen statt das GHCR-Image zu nutzen:
+
+```yaml
+services:
+  rssproxy:
+    build: .
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+```
+
 ## GitHub Container Registry (GHCR)
 
 Das veröffentlichte Image liegt unter [ghcr.io/bernardteske/rssproxy-node](https://github.com/BernardTeske/rssproxy-node/pkgs/container/rssproxy-node).
