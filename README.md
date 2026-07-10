@@ -52,17 +52,15 @@ docker run -p 8080:8080 -e PORT=8080 rssproxy
 
 ## GitHub Container Registry (GHCR)
 
-Bei Push auf `main`, bei Tags im Format `v*.*.*` oder manuell über **Actions → Publish Docker image to GHCR** wird das Image automatisch nach GHCR gepusht:
+Das veröffentlichte Image liegt unter [ghcr.io/bernardteske/rssproxy-node](https://github.com/BernardTeske/rssproxy-node/pkgs/container/rssproxy-node).
 
-```
-ghcr.io/<owner>/rssproxy:latest
-```
+Bei Push auf `main`, bei Tags im Format `v*.*.*` oder manuell über **Actions → Publish Docker image to GHCR** wird das Image automatisch gebaut und gepusht.
 
 Image pullen und starten:
 
 ```bash
-docker pull ghcr.io/<owner>/rssproxy:latest
-docker run -p 3000:3000 ghcr.io/<owner>/rssproxy:latest
+docker pull ghcr.io/bernardteske/rssproxy-node:latest
+docker run -p 3000:3000 ghcr.io/bernardteske/rssproxy-node:latest
 ```
 
 Das Image unterstützt `linux/amd64` und `linux/arm64`.
