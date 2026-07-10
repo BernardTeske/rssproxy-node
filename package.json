@@ -1,0 +1,12 @@
+{
+  "name": "rssproxy",
+  "version": "1.0.0",
+  "description": "RSS feed proxy (Node.js equivalent of index.php)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
